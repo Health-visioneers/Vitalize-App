@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:vitaliz/models/prescription_model.dart';
 import 'package:vitaliz/widgets/prescription_page.dart';
 
 class PrescriptionCard extends StatefulWidget {
@@ -13,6 +14,7 @@ class PrescriptionCard extends StatefulWidget {
     required this.gender,
     required this.diseaseName,
     required this.doctorName,
+    required this.prescription
   });
   double w;
   double h;
@@ -22,6 +24,7 @@ class PrescriptionCard extends StatefulWidget {
   String date;
   String doctorName;
   String diseaseName;
+  Records prescription;
 
   @override
   State<PrescriptionCard> createState() => _PrescriptionCardState();
@@ -32,13 +35,20 @@ class _PrescriptionCardState extends State<PrescriptionCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        height: widget.h * 0.15,
+        height: widget.h * 0.17,
         width: double.maxFinite,
-        margin: EdgeInsets.symmetric(vertical: 5),
-        padding: EdgeInsets.all(15),
+        margin: const EdgeInsets.symmetric(vertical: 5),
+        padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Color.fromARGB(255, 235, 225, 255),
+          gradient: const LinearGradient(
+            colors: [
+            Color.fromARGB(255, 135, 133, 255),
+            Color.fromARGB(255, 200, 199, 255),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight
+          )
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,21 +56,21 @@ class _PrescriptionCardState extends State<PrescriptionCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(widget.userName,style: TextStyle(fontFamily: 'metro-m',fontSize: 18),),
-                Text(widget.date,style: TextStyle(fontFamily: 'metro-m',fontSize: 14),),
+                Text(widget.userName,style: TextStyle(fontFamily: 'metro-m',fontSize: 18,color: Colors.white),),
+                Text(widget.date,style: TextStyle(fontFamily: 'metro-m',fontSize: 14,color: Colors.white),),
               ],
             ),
             SizedBox(height: 5,),
             Row(
               children: [
-                Text("${widget.gender} | ${widget.age}",style: TextStyle(fontFamily: 'metro',fontSize: 14,color: Colors.grey),),
+                Text("${widget.gender} | ${widget.age}",style: TextStyle(fontFamily: 'metro',fontSize: 14,color: const Color.fromARGB(182, 255, 255, 255)),),
               ],
             ),
             SizedBox(height: widget.h * 0.04,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("${widget.diseaseName}",style: TextStyle(fontFamily: 'metro-m',fontWeight: FontWeight.bold,fontSize: 18),),
+                Text("${widget.diseaseName}",style: TextStyle(fontFamily: 'metro-m',fontWeight: FontWeight.bold,fontSize: 18,color: Colors.white),),
                 //Text("${widget.doctorName}",style: TextStyle(fontFamily: 'metro-l',fontWeight: FontWeight.bold,fontSize: 16),),
               ],
             )
@@ -68,7 +78,7 @@ class _PrescriptionCardState extends State<PrescriptionCard> {
         ),
       ),
       onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PrescriptionPage()));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PrescriptionPage(prescription: widget.prescription,)));
       },
     );
   }

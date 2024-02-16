@@ -60,6 +60,7 @@ class _PrescriptionsPageState extends State<PrescriptionsPage> {
                           gender: prescription.gender,
                           diseaseName: prescription.diseaseName,
                           doctorName: prescription.doctorName,
+                          prescription:prescription,
                         );
                       },
                     ),

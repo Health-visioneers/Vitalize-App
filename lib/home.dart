@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vitaliz/widgets/home_page_card.dart';
-import 'package:vitaliz/widgets/live_doctor_card.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -36,7 +35,7 @@ class _HomeState extends State<Home> {
             children: [
               Container(
                 width: w,
-                height: h * 0.68,
+                height: h * 0.7,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),bottomRight: Radius.circular(25)),
                   gradient: LinearGradient(
