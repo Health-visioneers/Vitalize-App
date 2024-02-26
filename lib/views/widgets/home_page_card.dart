@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vitaliz/prescriptions_page.dart';
+import 'package:vitaliz/views/prescriptions_page.dart';
+import 'package:vitaliz/views/records_page.dart';
 
 class HomePageCard extends StatefulWidget {
   HomePageCard({
@@ -66,9 +67,13 @@ class _HomePageCardState extends State<HomePageCard> {
         ],
       ),
       onTap: (){
-        if(widget.index == 1){
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> PrescriptionsPage()));
+        switch(widget.index){
+          case 1: 
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> PrescriptionsPage()));
+          case 2:
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> MyRecords()));
         }
+
       },
     );
   }

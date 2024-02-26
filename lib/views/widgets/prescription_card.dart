@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:vitaliz/models/prescription_model.dart';
-import 'package:vitaliz/widgets/prescription_page.dart';
+import 'package:vitaliz/views/widgets/prescription_page.dart';
 
 class PrescriptionCard extends StatefulWidget {
   PrescriptionCard({

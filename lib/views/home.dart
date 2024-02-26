@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vitaliz/widgets/home_page_card.dart';
+import 'package:vitaliz/views/widgets/home_page_card.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

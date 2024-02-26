@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vitaliz/providers/prescription_controller.dart';
-import 'package:vitaliz/widgets/prescription_card.dart';
+import 'package:vitaliz/views/widgets/prescription_card.dart';
 
 class PrescriptionsPage extends StatefulWidget {
   const PrescriptionsPage({super.key});
