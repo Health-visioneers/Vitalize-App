@@ -33,6 +33,5 @@ class RecordsProvider extends ChangeNotifier{
 }
 
 // TODO : uploadRecord();
-// fetch
+// fetchrecords and view using pdf viewer
 // TODO : Home screen carosal, daily health updated 
-// 
